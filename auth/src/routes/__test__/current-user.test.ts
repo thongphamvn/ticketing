@@ -8,7 +8,7 @@ it("get current user", async () => {
   await request(app)
     .get(`/api/users/currentuser`)
     .set("Cookie", cookie)
-    .expect(201)
+    .expect(200)
     .expect(({ body }) => {
       expect(body).toEqual({
         currentUser: expect.objectContaining({ email: "test@test.com" }),
